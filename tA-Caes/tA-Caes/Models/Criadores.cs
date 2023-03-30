@@ -1,6 +1,40 @@
 ﻿namespace tA_Caes.Models
 {
+    /// <summary>
+    /// Descrição dos criadores de animais
+    /// </summary>
     public class Criadores
     {
+        public int id { get; set; }     
+
+        /// <summary>
+        /// nome dos criadores
+        /// </summary>
+        public string nome { get; set; }
+
+        /// <summary>
+        /// nome comercial dos criadores
+        /// </summary>
+        public string nomeComercial { get; set; }
+
+        /// <summary>
+        /// morada dos criadores
+        /// </summary>
+        public string morada { get; set; }
+
+        /// <summary>
+        /// codigo postal dos criadores
+        /// </summary>
+        public string codPostal { get; set; }
+
+        /// <summary>
+        /// email dos criadores
+        /// </summary>
+        public string email { get; set; } 
+        
+        /// <summary>
+        /// telemovel dos criadores
+        /// </summary>
+        public string telemovel { get; set;}
     }
 }
