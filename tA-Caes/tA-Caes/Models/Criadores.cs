@@ -1,10 +1,18 @@
-﻿namespace tA_Caes.Models
+﻿using Microsoft.Identity.Client;
+
+namespace tA_Caes.Models
 {
     /// <summary>
     /// Descrição dos criadores de animais
     /// </summary>
     public class Criadores
     {
+        public Criadores() 
+        {
+            //inicializar a lista de animais do criador 
+            listaAnimais = new HashSet<Animais>();
+        }
+
         public int id { get; set; }     
 
         /// <summary>
@@ -36,5 +44,15 @@
         /// telemovel dos criadores
         /// </summary>
         public string telemovel { get; set;}
+
+        /*
+         * relacionamentos associados ao Criador
+         */
+
+        /// <summary>
+        /// Lista dos animais associados ao Criador
+        /// </summary>
+        public ICollection<Animais> listaAnimais { get; set; }
+
     }
 }
