@@ -5,7 +5,11 @@ using tA_Caes.Data;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
+
+//esta variavel contem a localizacao do servidor 
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
+//inicializar o serviço de acesso à BD (SQL Server)
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
