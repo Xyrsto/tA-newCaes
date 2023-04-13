@@ -7,6 +7,11 @@ namespace tA_Caes.Models
     /// </summary>
     public class Animais
     {
+        public Animais() 
+        {
+            listaFotografias = new HashSet<Fotografias>();
+        }
+
         public int id { get; set; }
 
         /// <summary>
@@ -39,15 +44,25 @@ namespace tA_Caes.Models
         /*
         * Criação das chaves forasteiras
         */
-
+        
         /// <summary>
         /// FK para o Criador do animal
         /// </summary>
-        [ForeignKey (nameof(Criador))] //dentro dos parentisis fica o nome do atributo da linha 46
+        [ForeignKey (nameof(criador))] //dentro dos parentisis fica o nome do atributo da linha 46
         public int criadorFK { get; set; }
-        public Criadores Criador { get; set; } //efetivamente, esta é que é a FK, para a EntityFramework
+        public Criadores criador { get; set; } //efetivamente, esta é que é a FK, para a EntityFramework
 
+        /// <summary>
+        /// FK para a raça do animal 
+        /// </summary>
+        [ForeignKey (nameof(raca))]
+        public int racaFK { get; set; }
+        public Racas raca { get; set; }
 
+        /// <summary>
+        /// lista de fotografias para cada animal
+        /// </summary>
+        public ICollection<Fotografias> listaFotografias { get; set; }
             
 
     }

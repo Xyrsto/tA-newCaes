@@ -11,6 +11,7 @@ namespace tA_Caes.Models
         {
             //inicializar a lista de animais do criador 
             listaAnimais = new HashSet<Animais>();
+            listaRacas = new HashSet<Racas>();
         }
 
         public int id { get; set; }     
@@ -49,10 +50,18 @@ namespace tA_Caes.Models
          * relacionamentos associados ao Criador
          */
 
+
+
         /// <summary>
         /// Lista dos animais associados ao Criador
         /// </summary>
         public ICollection<Animais> listaAnimais { get; set; }
+
+        ///<summary>
+        ///Lista das raças associados ao criador
+        ///</summary>
+        public ICollection<Racas> listaRacas { get; set; }
+
 
     }
 }

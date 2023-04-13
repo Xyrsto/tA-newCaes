@@ -1,4 +1,6 @@
-﻿namespace tA_Caes.Models
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace tA_Caes.Models
 {
     /// <summary>
     /// Fotografias dos cães
@@ -21,5 +23,9 @@
         /// data em que a fotografia foi tirada
         /// </summary>
         public DateTime dataFotografia { get; set; }
+
+        [ForeignKey (nameof(animais))]
+        public int animalFK { get; set; }
+        public Animais animais { get; set; }
     }
 }
