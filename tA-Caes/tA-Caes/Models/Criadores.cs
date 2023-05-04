@@ -22,18 +22,21 @@ namespace tA_Caes.Models
         /// </summary>
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
         [Display(Name = "Nome")]
+        [StringLength(50)]
         public string nome { get; set; }
 
         /// <summary>
         /// nome comercial dos criadores
         /// </summary>
         [Display(Name = "Nome comercial")]
+        [StringLength(50)]
         public string nomeComercial { get; set; }
 
         /// <summary>
         /// morada dos criadores
         /// </summary>
         [Display(Name = "Morada")]
+        [StringLength(200)]
         public string morada { get; set; }
 
         /// <summary>
@@ -41,6 +44,8 @@ namespace tA_Caes.Models
         /// </summary>Display(Name = "código postal")
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
         [Display(Name = "Código postal")]
+        [RegularExpression("[1-9][0-9]{3}-[0-9]{3}( ){1,3}[A-Z -ÓÊÇÁÉÍÚÂÊÎÔÛ]+", ErrorMessage = "Formato Inválido")]
+        [StringLength(40)]
         public string codPostal { get; set; }
 
         /// <summary>
@@ -57,7 +62,7 @@ namespace tA_Caes.Models
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
         [Display(Name = "Telemóvel")]
         [StringLength(9, MinimumLength = 9, ErrorMessage = "Deve escrever {1} dígitos no número de {0}")]
-        [RegularExpression("9[1236][0-9]{7}", ErrorMessage = "Número de {0} não válido")]
+        [RegularExpression("9[1236][0-9{7}]", ErrorMessage = "Número de {0} não válido")] //pode ser ((+ | 00)[0-9]{2,3})? [0-9]{5,9}
         public string telemovel { get; set;}
 
         /*
