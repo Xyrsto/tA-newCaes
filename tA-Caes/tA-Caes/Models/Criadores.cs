@@ -8,7 +8,7 @@ namespace tA_Caes.Models
     /// </summary>
     public class Criadores
     {
-        public Criadores() 
+        public Criadores()
         {
             //inicializar a lista de animais do criador 
             listaAnimais = new HashSet<Animais>();
@@ -56,13 +56,13 @@ namespace tA_Caes.Models
         /// </summary>
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
         [Display(Name = "Telemóvel")]
+        [StringLength(9, MinimumLength = 9, ErrorMessage = "Deve escrever {1} dígitos no número de {0}")]
+        [RegularExpression("9[1236][0-9]{7}", ErrorMessage = "Número de {0} não válido")]
         public string telemovel { get; set;}
 
         /*
          * relacionamentos associados ao Criador
          */
-
-
 
         /// <summary>
         /// Lista dos animais associados ao Criador
