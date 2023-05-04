@@ -1,5 +1,9 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 
+//comandos de criação da BD no terminal
+//update-database
+//add-migration
+
 namespace tA_Caes.Models
 {
     /// <summary>

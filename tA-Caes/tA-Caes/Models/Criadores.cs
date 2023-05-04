@@ -1,4 +1,5 @@
 ﻿using Microsoft.Identity.Client;
+using System.ComponentModel.DataAnnotations;
 
 namespace tA_Caes.Models
 {
@@ -14,36 +15,47 @@ namespace tA_Caes.Models
             listaRacas = new HashSet<Racas>();
         }
 
-        public int id { get; set; }     
+        public int id { get; set; }
 
         /// <summary>
         /// nome dos criadores
         /// </summary>
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
+        [Display(Name = "Nome")]
         public string nome { get; set; }
 
         /// <summary>
         /// nome comercial dos criadores
         /// </summary>
+        [Display(Name = "Nome comercial")]
         public string nomeComercial { get; set; }
 
         /// <summary>
         /// morada dos criadores
         /// </summary>
+        [Display(Name = "Morada")]
         public string morada { get; set; }
 
         /// <summary>
         /// codigo postal dos criadores
-        /// </summary>
+        /// </summary>Display(Name = "código postal")
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
+        [Display(Name = "Código postal")]
         public string codPostal { get; set; }
 
         /// <summary>
         /// email dos criadores
         /// </summary>
-        public string email { get; set; } 
-        
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
+        [Display(Name = "Email")]
+        [EmailAddress]
+        public string email { get; set; }
+
         /// <summary>
         /// telemovel dos criadores
         /// </summary>
+        [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
+        [Display(Name = "Telemóvel")]
         public string telemovel { get; set;}
 
         /*
