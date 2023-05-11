@@ -62,7 +62,7 @@ namespace tA_Caes.Models
         [Required(ErrorMessage = "O {0} é de preenchimento obrigatório.")]
         [Display(Name = "Telemóvel")]
         [StringLength(9, MinimumLength = 9, ErrorMessage = "Deve escrever {1} dígitos no número de {0}")]
-        [RegularExpression("9[1236][0-9{7}]", ErrorMessage = "Número de {0} não válido")] //pode ser ((+ | 00)[0-9]{2,3})? [0-9]{5,9}
+        [RegularExpression("9[1236][0-9]{7}", ErrorMessage = "Número de {0} não válido")] //pode ser ((+ | 00)[0-9]{2,3})? [0-9]{5,9}
         public string telemovel { get; set;}
 
         /*

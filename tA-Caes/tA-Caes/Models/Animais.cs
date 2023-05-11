@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 //comandos de criação da BD no terminal
 //update-database
@@ -53,6 +54,7 @@ namespace tA_Caes.Models
         /// FK para o Criador do animal
         /// </summary>
         [ForeignKey (nameof(criador))] //dentro dos parentisis fica o nome do atributo da linha 46
+        [Display(Name = "Criador")]
         public int criadorFK { get; set; }
         public Criadores criador { get; set; } //efetivamente, esta é que é a FK, para a EntityFramework
 
@@ -60,6 +62,7 @@ namespace tA_Caes.Models
         /// FK para a raça do animal 
         /// </summary>
         [ForeignKey (nameof(raca))]
+        [Display(Name = "Raça")]
         public int racaFK { get; set; }
         public Racas raca { get; set; }
 
